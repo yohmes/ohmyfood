@@ -1,0 +1,17 @@
+@import "homepage";
+@import "restaurants";
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.header{
+    a{
+        img{
+            width:150px;
+            height:auto;
+        }
+    }
+}
