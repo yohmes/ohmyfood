@@ -1,7 +1,55 @@
 
 
 .header{
+    display: grid;
    
+    .restaurantContainer{
+        display:grid;
+        grid-template-columns: auto auto; /*deux colonnes pour l'icone et le logo*/
+        align-items: center; /* Centre verticalement le contenu */
+        .link{
+            display: grid;
+            grid-template-columns: auto auto;/*deux colonnes pour l'icone et le logo*/
+            align-items: center;
+
+            i{
+                margin-right: 4rem;/*espace entre l'icone et le logo*/
+                position: absolute;
+                left: 1rem;
+            }
+            .logo{
+                margin-left: 7rem;
+            }
+        }
+        .img_en_tete{
+            grid-column-start: 1; /* Placez l'image dans la première colonne */
+            grid-column-end: 3; /* L'image s'étend sur les deux colonnes */
+            width:100%;
+            height:auto;
+            object-fit: cover;
+            max-height: 200px;
+        }
+       
+    }
+    
 }
+.main{
+    .containerMenu{
+        background-color: #f6f6f6;
+        title{
+            font-family: "Shrikhand", sans-serif;
+            font-size: 28px;
+            font-style: italic;
+            font-weight: 400;
+            text-align: left;
+            
+
+
+        }
+    }
+}
+
+
+
 
 

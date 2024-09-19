@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -268,6 +269,47 @@
     padding: 1rem;
   }
 }
+.header {
+  display: grid;
+}
+.header .restaurantContainer {
+  display: grid;
+  grid-template-columns: auto auto; /*deux colonnes pour l'icone et le logo*/
+  align-items: center; /* Centre verticalement le contenu */
+}
+.header .restaurantContainer .link {
+  display: grid;
+  grid-template-columns: auto auto; /*deux colonnes pour l'icone et le logo*/
+  align-items: center;
+}
+.header .restaurantContainer .link i {
+  margin-right: 4rem; /*espace entre l'icone et le logo*/
+  position: absolute;
+  left: 1rem;
+}
+.header .restaurantContainer .link .logo {
+  margin-left: 7rem;
+}
+.header .restaurantContainer .img_en_tete {
+  grid-column-start: 1; /* Placez l'image dans la première colonne */
+  grid-column-end: 3; /* L'image s'étend sur les deux colonnes */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.main .containerMenu {
+  margin-left: 2rem;
+}
+.main .containerMenu title {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  text-align: left;
+}
+
 * {
   padding: 0;
   margin: 0;
