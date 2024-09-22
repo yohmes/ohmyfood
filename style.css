@@ -269,28 +269,30 @@
     padding: 1rem;
   }
 }
-.header {
+header {
   display: grid;
 }
-.header .restaurantContainer {
+header .restaurantContainer {
   display: grid;
   grid-template-columns: auto auto; /*deux colonnes pour l'icone et le logo*/
   align-items: center; /* Centre verticalement le contenu */
 }
-.header .restaurantContainer .link {
+header .restaurantContainer .link {
   display: grid;
   grid-template-columns: auto auto; /*deux colonnes pour l'icone et le logo*/
   align-items: center;
 }
-.header .restaurantContainer .link i {
+header .restaurantContainer .link i {
   margin-right: 4rem; /*espace entre l'icone et le logo*/
   position: absolute;
   left: 1rem;
 }
-.header .restaurantContainer .link .logo {
+header .restaurantContainer .link .logo {
   margin-left: 7rem;
 }
-.header .restaurantContainer .img_en_tete {
+header .restaurantContainer .img_en_tete {
+  position: relative;
+  z-index: 1;
   grid-column-start: 1; /* Placez l'image dans la première colonne */
   grid-column-end: 3; /* L'image s'étend sur les deux colonnes */
   width: 100%;
@@ -299,15 +301,60 @@
   max-height: 200px;
 }
 
-.main .containerMenu {
+main {
+  position: relative;
+  top: -30px;
+  z-index: 2;
   background-color: #f6f6f6;
+  overflow: hidden;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
 }
-.main .containerMenu title {
+main .containerMenu .title {
+  display: inline-block;
+  margin-right: 2rem;
   font-family: "Shrikhand", sans-serif;
   font-size: 28px;
-  font-style: italic;
   font-weight: 400;
   text-align: left;
+  padding: 2rem 4rem 0.5rem 1rem;
+}
+main .containerMenu i {
+  position: relative;
+  right: -20rem;
+  top: -2.5rem;
+  font-size: 25px;
+}
+main .containerMenu .menus {
+  padding-left: 1rem;
+}
+main .containerMenu .menus .submenu_title {
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+main .containerMenu .menus .dish_list {
+  list-style-type: none;
+  background-color: white;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+main .containerMenu .menus .dish_list .dish_name {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 30px;
+}
+main .containerMenu .menus .dish_list .dish_name p {
+  font-weight: 200;
+  font-size: 1rem;
+}
+main .containerMenu .menus .dish_list .price {
+  position: absolute;
+  right: 0.5rem;
+  margin-top: 2rem;
 }
 
 * {
