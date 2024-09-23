@@ -346,6 +346,7 @@ main .containerMenu .menus .dish_list .dish_name {
   flex-direction: column;
   gap: 10px;
   line-height: 30px;
+  box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
 }
 main .containerMenu .menus .dish_list .dish_name p {
   font-weight: 200;
@@ -355,6 +356,17 @@ main .containerMenu .menus .dish_list .price {
   position: absolute;
   right: 0.5rem;
   margin-top: 2rem;
+}
+main .button {
+  border-radius: 25px;
+  background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  padding: 1rem 3.5rem;
+  color: white;
+  height: 3.2rem;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  border: none;
+  font-size: 16px;
+  margin: 1.5rem 6rem 2.5rem;
 }
 
 * {
