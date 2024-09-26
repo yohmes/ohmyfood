@@ -332,7 +332,7 @@ main .containerMenu .menus .submenu_title {
   font-weight: 300;
   font-size: 18px;
   margin-bottom: 1rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 main .containerMenu .menus .dish_list {
   list-style-type: none;
@@ -357,6 +357,9 @@ main .containerMenu .menus .dish_list .price {
   position: absolute;
   right: 0.5rem;
   margin-top: 2rem;
+}
+main .containerMenu .menusList {
+  margin-bottom: 3rem;
 }
 main .button {
   border-radius: 25px;
