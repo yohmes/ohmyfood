@@ -298,7 +298,7 @@ header .restaurantContainer .img_en_tete {
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-height: 200px;
+  max-height: 300px;
 }
 
 main {
