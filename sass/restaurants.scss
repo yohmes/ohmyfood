@@ -114,8 +114,53 @@ main{
     }
 
 
+/** ici c'est la version desktop**/
 
+@media screen and (min-width:1024px){
+    
+    header{
+        .restaurantContainer{
+            a{ 
+                .img_en_tete{
+                    background-size: cover;
+                }
+               .logo{
+                width: auto;
+                padding-left: 3rem !important;
+               } 
+            }
+        }
+    }
 
+    main{
+        margin:0rem 7rem 0rem 7rem;
+        .containerMenu{
+            margin: 0rem 8rem 0rem 8rem;
+            .title{
+                display: flex;
+                justify-content: center;   
+            }
+            i{ 
+                margin-left:33rem;  
+            }
+            .menus{
+                .submenu_title{
+                    margin-top: 0.2rem;
+                }
+                .menusList{
+                    margin-bottom: 3rem;
+                    width:auto;
+                   
+                    
+                }
+            }
+           .button{
+            margin-left: 35rem;
+            
+           } 
+        }
+    }
+}
 
 
 

@@ -370,6 +370,39 @@ main .button {
   margin: 1.5rem 6rem 2.5rem;
 }
 
+/** ici c'est la version desktop**/
+@media screen and (min-width: 1024px) {
+  header .restaurantContainer a .img_en_tete {
+    background-size: cover;
+  }
+  header .restaurantContainer a .logo {
+    width: auto;
+    padding-left: 3rem !important;
+  }
+  main {
+    margin: 0rem 7rem 0rem 7rem;
+  }
+  main .containerMenu {
+    margin: 0rem 8rem 0rem 8rem;
+  }
+  main .containerMenu .title {
+    display: flex;
+    justify-content: center;
+  }
+  main .containerMenu i {
+    margin-left: 33rem;
+  }
+  main .containerMenu .menus .submenu_title {
+    margin-top: 0.2rem;
+  }
+  main .containerMenu .menus .menusList {
+    margin-bottom: 3rem;
+    width: auto;
+  }
+  main .containerMenu .button {
+    margin-left: 35rem;
+  }
+}
 * {
   padding: 0;
   margin: 0;
