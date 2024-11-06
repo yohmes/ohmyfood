@@ -2,6 +2,55 @@
     font-family: "Roboto",sans-serif;
 }
 
+#loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: loader 2s forwards cubic-bezier(0, 0, 1, -0.45);
+
+
+    .spinner {
+        width: 50px;
+        padding: 8px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: #9356DC;
+        margin-bottom: 2rem;
+        --_m: 
+          conic-gradient(#0000 10%,#000),
+          linear-gradient(#000 0 0) content-box;
+        -webkit-mask: var(--_m);
+                mask: var(--_m);
+        -webkit-mask-composite: source-out;
+                mask-composite: subtract;
+        animation: spinner 1s infinite linear;
+    }
+}
+
+@keyframes spinner {
+    to{
+        transform: rotate(1turn)
+    }
+}
+@keyframes loader {
+    from{
+        opacity: 1;
+        z-index: 999999;
+    }
+
+    to{
+        opacity: 0;
+        z-index: -10;
+    }
+    
+}
 
 .header{
     background-color:#FFFF;
@@ -63,63 +112,63 @@
     }
 }
 
-.functioning{
-    background-color: #FFFF;
-    padding: 5rem ;
-    .container{
-        text-align: center;
-        h2{
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
+        .functioning{
+            background-color: #FFFF;
+            padding: 5rem ;
+            .container{
+                text-align: center;
+                h2{
+                    font-size: 1.5rem;
+                    margin-bottom: 2rem;
+                }
 
-        .function_steps{
-           list-style-type: none;
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           gap: 1rem;
-
-           .function_step{
-                position: relative;
+                .function_steps{
+                list-style-type: none;
                 display: flex;
-                background-color: #f6f6f6;
-                padding: 1rem 1rem 1rem 2rem;
-                border-radius: 20px;
-                box-shadow: 0px 4px 15px 0px #00000026;
-                width: 90%;
-                max-width: 400px;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
 
-               .function_number{
-                border: 0.2px solid;
-                border-radius: 100%;
-                background-color:#9356DC;
-                color: #FFFF;
-                padding: 0.1rem 0.3rem;
-                margin: 0.1rem ;
-                position: absolute;
-                left: -0.7rem;                
-               }
-               
-               i{
-                color: #7e7e7e;
-                margin-right: 1.5rem;
-                
-               }
+                .function_step{
+                        position: relative;
+                        display: flex;
+                        background-color: #f6f6f6;
+                        padding: 1rem 1rem 1rem 2rem;
+                        border-radius: 20px;
+                        box-shadow: 0px 4px 15px 0px #00000026;
+                        width: 90%;
+                        max-width: 400px;
 
-               #iconStore{
-                color:#9356DC ;
-               }
+                    .function_number{
+                        border: 0.2px solid;
+                        border-radius: 100%;
+                        background-color:#9356DC;
+                        color: #FFFF;
+                        padding: 0.1rem 0.3rem;
+                        margin: 0.1rem ;
+                        position: absolute;
+                        left: -0.7rem;                
+                    }
+                    
+                    i{
+                        color: #7e7e7e;
+                        margin-right: 1.5rem;
+                        
+                    }
 
-               span{
-                color:#000000 ;
-               }
+                    #iconStore{
+                        color:#9356DC ;
+                    }
 
+                    span{
+                        color:#000000 ;
+                    }
+
+                    }
+
+                }
             }
-
         }
-    }
-}
 
 .restaurants{
     background-color: #f6f6f6;
@@ -176,6 +225,9 @@
                 
                 }
                 .card_footer{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                     position: relative;
                     padding: 1rem;
 
@@ -195,24 +247,37 @@
                         }
 
                         .card_icon_btn_heart{
+                            position: relative;
+                            width: 2rem;
+                            height: 2rem;
+                            i{
+                                font-size:25px; 
+                            }
+                            .far{
                                 position: absolute;
-                                top: 1rem;
-                                right: 1rem;
-                                font-size:25px;
-                                color:#101010 ;
+                                opacity: 1;
+                                transition: 0.2s ease;
+                            }
+                            .fas{
+                                z-index: 2;
+                                position: absolute;
+                                opacity: 0;
+                                background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                transition: 0.2s ease;
+                            }
 
+                            &:hover{
+                                
+                                .far{
+                                    opacity: 0;
+                                }
+                                .fas{
+                                    opacity: 1;
+                                }
+                            }
                         }
-                        .card_icon_btn_heart2{
-                            font-size: 25px;
-                            position: absolute;
-                            top: 1rem;
-                            right: 1rem;
-                            background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-                            
-
-
-                        }
-                
                 } 
             }
 
@@ -252,7 +317,7 @@
         }
     }    
 }
-
+/** ici c'est la version desktop**/
 @media screen and (min-width:1024px){
 
     .location{
@@ -307,6 +372,18 @@
                     display:grid;
                     grid-template-columns: repeat(2,1fr);
                     gap:3rem 7rem;
+                    
+
+                    a{
+                        .card_footer{
+                           
+                            .card_icon_btn_heart{
+                                i{
+
+                                }
+                            }
+                        }
+                    }
                 }
             }       
         }

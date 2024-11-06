@@ -37,7 +37,8 @@ header{
     }  
 }
 
-main{
+.mainRestaurants{
+    margin: auto;
     position: relative;
     top: -30px;
     z-index: 2;
@@ -46,24 +47,52 @@ main{
     border-top-left-radius: 2.5rem;
     border-top-right-radius: 2.5rem;
     .containerMenu{
+        padding: 2rem;
         .title{
-            display: inline-block;
-            margin-right:2rem;
+            gap: 10px;
+            display:flex;
+            align-items: center;
             font-family: "Shrikhand",sans-serif;
             font-size: 28px;
             font-weight: 400;
             text-align: left;
-            padding:2rem 4rem 0.5rem 1rem;
-
-        }
-        i{
-            font-size:25px;
-            transform: translateX(-5rem);
-            
         }
 
+        
+        .icon_btn_heart{
+            margin-top: 8px;
+            position: relative;
+            width: 2rem;
+            height: 2rem;
+            i{
+                font-size:25px; 
+            }
+            .far{
+                position: absolute;
+                opacity: 1;
+                transition: 0.2s ease;
+            }
+            .fas{
+                z-index: 2;
+                position: absolute;
+                opacity: 0;
+                background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: 0.2s ease;
+            }
+
+            &:hover{
+                
+                .far{
+                    opacity: 0;
+                }
+                .fas{
+                    opacity: 1;
+                }
+            }
+        }
         .menus{
-            padding-left: 1rem;
             .submenu_title{
                 font-weight: 300;
                 font-size:18px;
@@ -75,25 +104,69 @@ main{
                 background-color:white;
                 border-radius: 15px;
                 margin-bottom:20px ;
+                overflow: hidden;
                 
                 .dish_name{
                     position: relative;
                     padding: 1rem;
                     display: flex;
-                    flex-direction: column;
-                    gap: 10px;
+                    overflow: hidden;
                     line-height: 30px;
                     box-shadow: 0px 4.01px 15.04px 0px #0000001A;
+                    cursor: pointer;
+                    width: 100%;
+                    justify-content: space-between;
 
                         p{
                             font-weight: 200;
                             font-size:1rem;
                         }
+                        .confirmation{
+                            background-color: #99E2D0;
+                            margin: -1rem -5rem -1rem 1rem;
+                            width: 4rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transition: 0.5s;
+                            
+                        }
+
+                        &:hover .confirmation{
+                            margin-right: -1rem;
+                        }
+                        .icon{
+                            height: 1.6rem;
+                            width: 1.3rem;
+                            background-color: white;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 100%;
+
+                            i{
+                                color: #99E2D0;
+                            }
+                        }
+                        .dish_title{
+                            flex: 1;
+                            overflow: hidden;
+
+                            h3{
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+
+                            }
+                            p{
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                        }
                     }
 
                     .price{
-                        position: absolute;
-                        right: 0.5rem;
                         margin-top: 2rem;
                     }
                 }
@@ -101,6 +174,23 @@ main{
             }
             .menusList{
                 margin-bottom: 3rem;
+                opacity: 0;
+                animation-name: apparition;
+                animation-fill-mode: forwards;
+                
+
+                &.number1{
+                    animation-delay: 0;  
+                    animation-duration:2s ;  
+                }
+                &.number2{
+                    animation-delay: 0.3s;  
+                    animation-duration:2s ;  
+                }
+                &.number3{
+                    animation-delay: 0.6s;  
+                    animation-duration:2s ;  
+                }
             }
         }
         .button{
@@ -125,49 +215,116 @@ main{
     header{
         .restaurantContainer{
             a{ 
-                .img_en_tete{
-                    background-size: cover;
-                }
+                margin-top: 0.2rem;
+
                .logo{
-                padding-left: 3rem;
+                position:relative;
+                left: 10rem;
                } 
+            }
+            
+            .img_en_tete{
+                object-fit:cover;
+                max-height: 300Px;
             }
         }
     }
 
-    main{
-        margin:0rem 7rem 0rem 7rem;
+    .mainRestaurants{
+        width: 80%;
         .containerMenu{
-
-            margin: 0rem 8rem 0rem 8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             .title{
                 display: flex;
-                justify-content: center;
-                padding:2rem;
+                align-items: center;
+            }
 
-            }
-            i{ 
-                position: absolute;
-                right: 2px;  
-            }
             .menus{
+                width: 70%;
                 .submenu_title{
                     margin-top: 0.2rem;
                 }
                 .menusList{
                     margin-bottom: 3rem;
                     width:auto;
+
+                    ul{
+                        li{
+                           .price{
+                            margin-left: 2rem;
+                           }
+                        }
+                    }
                    
                     
                 }
             }
-           .button{
-            margin-left: 35rem;
+        }
+    .footer{
+         position: relative;
+        
+        .footer_text{
+            display: flex;
+            justify-content: end;
+            padding-left: 3rem;
+            position: absolute;
+            right: 3rem;
+            top: 3.5rem;
+        }
+        .footer_list{
+            display: flex;
+            flex-direction:row;
+            justify-content: end;
+            padding:2rem 15rem 1rem 0rem;
+        
+            li{
+                padding:1rem;
+      
+            }
             
-           } 
         }
     }
+   
+}
+}
+/** ici c'est la version tablette**/
+
+@media(min-width:768px){
+    header{
+        .restaurantContainer{
+            a{ 
+                .logo{
+                    padding-left: 8rem;
+                }
+        
+            }
+        }
+    }
+
+
+    .main{
+        .containerMenu{
+            
+            .button{
+                margin-left: 20rem;
+            }
+        }
+    }
+
 }
 
 
 
+/** animation **/
+@keyframes apparition{
+    from{
+        opacity: 0;
+        transform: translateY(1.6rem);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
