@@ -504,7 +504,12 @@ header .restaurantContainer .img_en_tete {
   animation-delay: 0.6s;
   animation-duration: 2s;
 }
-.mainRestaurants .button {
+.mainRestaurants .commandButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.mainRestaurants .commandButton .button {
   border-radius: 25px;
   background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   padding: 1rem 3.5rem;
@@ -513,7 +518,7 @@ header .restaurantContainer .img_en_tete {
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   border: none;
   font-size: 16px;
-  margin: 1.5rem 9rem 2.5rem;
+  width: max-content;
 }
 
 /** ici c'est la version desktop**/
